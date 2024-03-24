@@ -1,0 +1,10 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+command: cat ${{inputs.titanic_csv}}
+inputs:
+  titanic_csv:
+    type: uri_file
+    path: titanic.csv
+environment:
+  image: library/python:latest
+compute: azureml:Compute1
+display_name: job_input

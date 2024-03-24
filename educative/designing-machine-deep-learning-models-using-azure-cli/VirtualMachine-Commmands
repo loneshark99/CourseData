@@ -1,0 +1,18 @@
+
+--List Machines SKU available
+    az vm list-sizes --location westus --output yamlc
+
+-- Create VM 
+
+    az vm create --resource-group RG1 --name Vm1 --image Win2019DataCenter --public-ip-sku Standard --admin-
+username adminuser --generate-ssh-keys --no-wait
+
+-- List IP Address of the VM
+    az vm list-ip-addresses -g RG1
+
+-- Login into the VM created
+    ssh adminuser@ publicIPAddress
+
+-- Delete the VM
+    az vm delete --resource-group RG1 --name Vm1 --yes
+

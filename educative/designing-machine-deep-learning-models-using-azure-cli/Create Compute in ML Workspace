@@ -1,0 +1,5 @@
+-- Create a Compute
+    az ml compute create --resource-group RG1 --workspace-name workspace1 --name Compute1 --size Standard_D2as_v4 --type Amlcompute
+
+-- Delete a Compute
+    az ml compute delete --name Compute1 --yes

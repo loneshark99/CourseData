@@ -1,0 +1,15 @@
+ -- List all the available environments
+    az ml environment list --resource-group RG1 --workspace workspace1 --output yamlc
+
+    az ml data create --resource-group  RG1 --workspace workspace1 --name ExampleFile --type uri_file --path C:\ed\designing-machine-deep-learning-models-using-azure-cli\data.tsv
+
+
+    -- Create a job on a computer using the job.yml.
+    az ml job create -f C:\ed\designing-machine-deep-learning-models-using-azure-cli\job.yml --set compute=C
+ompute1 --resource-group RG1 --workspace workspace1
+
+    -- Submit a job with input to a azure ml compute 
+    az ml job create -f C:\ed\designing-machine-deep-learning-models-using-azure-cli\Titanicjob.yml --set compute=Compute1 --resource-group RG1 --workspace workspace1
+
+    -- submit a code job
+    az ml job create -f C:\ed\designing-machine-deep-learning-models-using-azure-cli\codejob.yml --resource-group RG1 --workspace workspace1
